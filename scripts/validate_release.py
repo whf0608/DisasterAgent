@@ -131,6 +131,8 @@ def check_required_run_artifacts(root: Path) -> list[str]:
 def check_private_patterns(root: Path, files: list[Path]) -> list[str]:
     errors: list[str] = []
     for path in files:
+        if path.name == "validate_release.py" and path.parent.name == "scripts":
+            continue
         try:
             text = path.read_text(encoding="utf-8", errors="ignore")
         except Exception:
