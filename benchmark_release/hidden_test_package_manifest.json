@@ -1,0 +1,37 @@
+{
+  "package_id": "disasteragentbench-hidden-test-v1.0.0",
+  "version": "1.0.0",
+  "status": "frozen",
+  "split": "hidden_test",
+  "distributed_task_file": "hidden_test_tasks.jsonl",
+  "task_count": 262,
+  "task_family_counts": {
+    "assessment_synthesis": 44,
+    "damage_localization": 44,
+    "drone_reinspection": 42,
+    "event_retrieval": 44,
+    "map_grounding": 44,
+    "report_generation": 44
+  },
+  "gold_policy": "Gold fields are removed from the distributed hidden-test task file.",
+  "companion_files": [
+    "../benchmark_freeze/freeze_package_manifest.json",
+    "evaluation_config.json"
+  ],
+  "required_submission_artifacts": [
+    "config.json",
+    "predictions.jsonl",
+    "trace.jsonl",
+    "metrics.json",
+    "failures.csv"
+  ],
+  "source_task_file": "D:\\mapagent\\outputs\\task_generation_v5\\task_records_hidden_test.jsonl",
+  "generated_at": "2026-04-26 23:17:22",
+  "notes": [
+    "Do not distribute hidden-test gold labels with this package.",
+    "Use the same scoring thresholds as the active evaluation configuration.",
+    "Status `frozen` means the distributed hidden-test package remains gold-removed while the paired internal formal task file and adjudicated override files are available for strict evaluation."
+  ],
+  "formal_internal_task_file": "internal_hidden_test_tasks.formal.jsonl",
+  "formal_gold_source": "../benchmark_freeze/assessment_gold_overrides.jsonl; ../benchmark_freeze/report_gold_overrides.jsonl; internal_hidden_test_tasks.formal.jsonl"
+}

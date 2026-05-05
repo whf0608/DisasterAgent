@@ -1,0 +1,60 @@
+{
+  "run_roots": [
+    "D:\\codex_work\\agentpaper\\benchmark_release\\runs_transfer_heldout_20260504_separate\\hazard_heldout",
+    "D:\\codex_work\\agentpaper\\benchmark_release\\runs_transfer_heldout_20260504_separate\\region_heldout",
+    "D:\\codex_work\\agentpaper\\benchmark_release\\runs_transfer_heldout_20260504_separate\\time_heldout"
+  ],
+  "metric_file_count": 18,
+  "group_count": 6,
+  "pairwise_test_count": 3,
+  "groups": [
+    {
+      "subset": "hidden_test",
+      "system": "full_disasteragent",
+      "config_id": "disasteragentbench-eval-v1.0.0",
+      "taskset_id": "taskset_7ab7452a0544",
+      "taskset_label": "region_heldout_manifest",
+      "seed_count": 3
+    },
+    {
+      "subset": "hidden_test",
+      "system": "full_disasteragent",
+      "config_id": "disasteragentbench-eval-v1.0.0",
+      "taskset_id": "taskset_bc756f9e4ba6",
+      "taskset_label": "time_heldout_manifest",
+      "seed_count": 3
+    },
+    {
+      "subset": "hidden_test",
+      "system": "full_disasteragent",
+      "config_id": "disasteragentbench-eval-v1.0.0",
+      "taskset_id": "taskset_ed80892bb3bd",
+      "taskset_label": "hazard_heldout_manifest",
+      "seed_count": 3
+    },
+    {
+      "subset": "hidden_test",
+      "system": "single_agent_all_tools",
+      "config_id": "disasteragentbench-eval-v1.0.0",
+      "taskset_id": "taskset_7ab7452a0544",
+      "taskset_label": "region_heldout_manifest",
+      "seed_count": 3
+    },
+    {
+      "subset": "hidden_test",
+      "system": "single_agent_all_tools",
+      "config_id": "disasteragentbench-eval-v1.0.0",
+      "taskset_id": "taskset_bc756f9e4ba6",
+      "taskset_label": "time_heldout_manifest",
+      "seed_count": 3
+    },
+    {
+      "subset": "hidden_test",
+      "system": "single_agent_all_tools",
+      "config_id": "disasteragentbench-eval-v1.0.0",
+      "taskset_id": "taskset_ed80892bb3bd",
+      "taskset_label": "hazard_heldout_manifest",
+      "seed_count": 3
+    }
+  ]
+}

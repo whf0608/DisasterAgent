@@ -1,0 +1,60 @@
+{
+  "version": "1.0.0",
+  "status": "frozen",
+  "frozen_at": "2026-04-26",
+  "fact_record_fields": [
+    {
+      "name": "fact_id",
+      "type": "string",
+      "required": true,
+      "description": "Stable identifier for the fact within one task."
+    },
+    {
+      "name": "statement",
+      "type": "string",
+      "required": true,
+      "description": "Atomic, source-grounded claim written as a single verifiable sentence."
+    },
+    {
+      "name": "evidence_keys",
+      "type": "array[string]",
+      "required": true,
+      "description": "One or more keys from evidence_key_registry.json supporting the claim."
+    },
+    {
+      "name": "source_asset_ids",
+      "type": "array[string]",
+      "required": false,
+      "description": "Archive asset identifiers or tool outputs needed to verify the fact."
+    },
+    {
+      "name": "severity_relevance",
+      "type": "string",
+      "required": false,
+      "description": "Optional note describing whether the fact supports severity, uncertainty, or follow-up action."
+    }
+  ],
+  "guidelines": [
+    "Each fact should be independently checkable from archived assets or tool traces.",
+    "Do not combine multiple claims into one fact.",
+    "Prefer observable evidence over inferred narrative language.",
+    "Use evidence keys rather than free-form source descriptions wherever possible."
+  ],
+  "scoring_contract": {
+    "atomicity_required": true,
+    "grounded_to_evidence_keys": true,
+    "free_text_without_registry_support": "discouraged"
+  },
+  "example_fact": {
+    "fact_id": "fact_001",
+    "statement": "Flooded road segments are visible within the target region.",
+    "evidence_keys": [
+      "target_region",
+      "damage_evidence"
+    ],
+    "source_asset_ids": [
+      "asset_post_001"
+    ],
+    "severity_relevance": "supports_severity"
+  }
+}

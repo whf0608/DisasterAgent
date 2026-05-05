@@ -1,0 +1,7 @@
+task_family,annotation_source,task_count,reference_event_match,reference_bbox_iou,reference_severity_match,reference_evidence_f1,reference_report_slot_f1,reference_drone_mission_match
+event_retrieval,provided,44,1.0,0.8181818181818182,0.0,1.0,1.0,1.0
+map_grounding,provided,44,1.0,1.0,0.0,1.0,1.0,1.0
+damage_localization,provided,44,1.0,1.0,0.0,1.0,1.0,1.0
+drone_reinspection,provided,42,1.0,1.0,0.0,1.0,1.0,1.0
+assessment_synthesis,provided,44,1.0,0.9772727272727273,0.4318181818181818,1.0,1.0,1.0
+report_generation,provided,44,1.0,1.0,0.0,1.0,1.0,1.0

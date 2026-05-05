@@ -1,0 +1,45 @@
+{
+  "version": "1.0.0",
+  "status": "frozen",
+  "frozen_at": "2026-04-26",
+  "labels": [
+    {
+      "label": "none",
+      "ordinal": 0,
+      "definition": "No actionable disaster impact is supported by the available evidence."
+    },
+    {
+      "label": "low",
+      "ordinal": 1,
+      "definition": "Localized or low-consequence impact is supported, with limited operational disruption."
+    },
+    {
+      "label": "medium",
+      "ordinal": 2,
+      "definition": "Material impact is present and likely requires follow-up verification or moderate intervention."
+    },
+    {
+      "label": "high",
+      "ordinal": 3,
+      "definition": "Substantial impact is supported by evidence and should trigger urgent analyst attention."
+    },
+    {
+      "label": "critical",
+      "ordinal": 4,
+      "definition": "Severe, high-risk impact is supported by evidence and should trigger immediate escalation."
+    }
+  ],
+  "adjudication_policy": {
+    "rule": "Resolve hidden-test label disagreements before task release.",
+    "preferred_evidence_order": [
+      "event consistency",
+      "spatial evidence",
+      "cross-asset agreement",
+      "human adjudication"
+    ]
+  },
+  "stability_guarantee": {
+    "label_ordinals_locked": true,
+    "label_names_locked": true
+  }
+}

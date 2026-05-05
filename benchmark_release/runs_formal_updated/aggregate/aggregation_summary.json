@@ -1,0 +1,34 @@
+{
+  "run_roots": [
+    "D:\\codex_work\\agentpaper\\benchmark_release\\runs_formal_updated"
+  ],
+  "metric_file_count": 9,
+  "group_count": 3,
+  "pairwise_test_count": 3,
+  "groups": [
+    {
+      "subset": "hidden_test",
+      "system": "oracle_all_gold",
+      "config_id": "disasteragentbench-eval-v1.0.0",
+      "taskset_id": "taskset_2a27e7489cc3",
+      "taskset_label": "updated_tasks_with_bbox.hidden_test_manifest",
+      "seed_count": 3
+    },
+    {
+      "subset": "hidden_test",
+      "system": "oracle_retrieval_single_agent",
+      "config_id": "disasteragentbench-eval-v1.0.0",
+      "taskset_id": "taskset_2a27e7489cc3",
+      "taskset_label": "updated_tasks_with_bbox.hidden_test_manifest",
+      "seed_count": 3
+    },
+    {
+      "subset": "hidden_test",
+      "system": "single_agent_react",
+      "config_id": "disasteragentbench-eval-v1.0.0",
+      "taskset_id": "taskset_2a27e7489cc3",
+      "taskset_label": "updated_tasks_with_bbox.hidden_test_manifest",
+      "seed_count": 3
+    }
+  ]
+}

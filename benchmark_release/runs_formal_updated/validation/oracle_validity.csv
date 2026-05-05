@@ -1,0 +1,4 @@
+system,seed_count,result_tier,formal_readiness_ok,end_to_end_success,event_accuracy,grounding_success,geojson_f1,mission_validity,severity_accuracy,report_grounding_score
+oracle_all_gold,3,formal,True,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+oracle_retrieval_single_agent,3,formal,True,0.5877862595419847,1.0,1.0,1.0,0.0,0.5,0.277777777777778
+single_agent_react,3,formal,True,0.5877862595419847,1.0,1.0,1.0,0.0,0.5,0.277777777777778

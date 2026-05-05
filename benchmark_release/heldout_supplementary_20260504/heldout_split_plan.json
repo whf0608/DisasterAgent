@@ -1,0 +1,92 @@
+{
+  "split_version": "supplementary_20260504",
+  "source_tasks": "D:\\codex_work\\agentpaper\\benchmark_release\\updated_tasks_with_bbox2.jsonl",
+  "output_tasks": "D:\\codex_work\\agentpaper\\benchmark_release\\heldout_supplementary_20260504\\updated_tasks_with_bbox2_heldout.jsonl",
+  "rules": {
+    "hazard_heldout": "metadata.hazard_type == 'Earthquake'",
+    "region_heldout": "event_id in curated Asia-Pacific event list",
+    "time_heldout": "event year >= 2023 extracted from event name/id"
+  },
+  "manifest_paths": {
+    "hazard_heldout": "D:\\codex_work\\agentpaper\\benchmark_release\\heldout_supplementary_20260504\\hazard_heldout_manifest.json",
+    "region_heldout": "D:\\codex_work\\agentpaper\\benchmark_release\\heldout_supplementary_20260504\\region_heldout_manifest.json",
+    "time_heldout": "D:\\codex_work\\agentpaper\\benchmark_release\\heldout_supplementary_20260504\\time_heldout_manifest.json"
+  },
+  "summary": {
+    "hazard_heldout": {
+      "task_count": 29,
+      "event_count": 5,
+      "events": {
+        "earthquake_eastern_iburi_hokkaido_2018": 6,
+        "earthquake_haiti_earthquake_2010": 6,
+        "earthquake_indonesia_earthquake_2022": 6,
+        "earthquake_myanmar_earthquake_2025": 5,
+        "earthquake_turkish_earthquake_2023": 6
+      }
+    },
+    "region_heldout": {
+      "task_count": 77,
+      "event_count": 13,
+      "events": {
+        "cyclone_cyclone_fani_2019": 6,
+        "cyclone_cyclone_tropical_cyclone_gita_2018": 6,
+        "earthquake_eastern_iburi_hokkaido_2018": 6,
+        "earthquake_indonesia_earthquake_2022": 6,
+        "earthquake_myanmar_earthquake_2025": 5,
+        "flooding_jiujiang_2024": 6,
+        "flooding_new_zealand_flooding_2023": 6,
+        "flooding_wairoa_flood_2024": 6,
+        "landslide_bijie_2018": 6,
+        "typhoon_typhoon_vongfong_2020": 6,
+        "volcan_nishinoshima_2013": 6,
+        "volcan_tonga_volcano_2022": 6,
+        "xview_sunda_tsunami": 6
+      }
+    },
+    "time_heldout": {
+      "task_count": 77,
+      "event_count": 13,
+      "events": {
+        "earthquake_myanmar_earthquake_2025": 5,
+        "earthquake_turkish_earthquake_2023": 6,
+        "fires_los_angeles_wildfires_2025": 6,
+        "fires_northwest_territories_fires_2023": 6,
+        "flooding_jiujiang_2024": 6,
+        "flooding_kalehe_drc_flooding_2023": 6,
+        "flooding_kenya_flooding_2024": 6,
+        "flooding_mexico_2023": 6,
+        "flooding_ndjamena_chad_flooding_2024": 6,
+        "flooding_new_zealand_flooding_2023": 6,
+        "flooding_wairoa_flood_2024": 6,
+        "hurricane_hurricane_helene_2024": 6,
+        "hurricane_hurricane_idalia_2023": 6
+      }
+    }
+  },
+  "task_family_counts": {
+    "hazard_heldout": {
+      "event_retrieval": 5,
+      "map_grounding": 5,
+      "damage_localization": 5,
+      "drone_reinspection": 4,
+      "assessment_synthesis": 5,
+      "report_generation": 5
+    },
+    "region_heldout": {
+      "event_retrieval": 13,
+      "map_grounding": 13,
+      "damage_localization": 13,
+      "drone_reinspection": 12,
+      "assessment_synthesis": 13,
+      "report_generation": 13
+    },
+    "time_heldout": {
+      "event_retrieval": 13,
+      "map_grounding": 13,
+      "damage_localization": 13,
+      "assessment_synthesis": 13,
+      "report_generation": 13,
+      "drone_reinspection": 12
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "enable_drone_execution": false,
+  "model_poll_timeout_s": 3,
+  "skip_assessment_model_detection": true,
+  "wait_assessment_model_results": false,
+  "reuse_assessment_results": true,
+  "prefer_task_context_grounding": true,
+  "skip_damage_model_without_tiles": true,
+  "lightweight_model_status": true,
+  "skip_model_store_placeholders": true,
+  "output_dir": "outputs/evaluation_runtime/full_disasteragent_transfer_heldout_20260504"
+}

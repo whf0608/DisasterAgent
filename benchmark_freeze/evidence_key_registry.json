@@ -1,0 +1,100 @@
+{
+  "version": "1.0.0",
+  "status": "frozen",
+  "frozen_at": "2026-04-26",
+  "keys": [
+    {
+      "key": "event_id",
+      "description": "Canonical event identifier selected by the system.",
+      "source_types": [
+        "data_search",
+        "data_read"
+      ]
+    },
+    {
+      "key": "hazard_type",
+      "description": "Hazard category associated with the selected event.",
+      "source_types": [
+        "data_search",
+        "data_read"
+      ]
+    },
+    {
+      "key": "map_source",
+      "description": "Map layer, source, or view used to ground the assessment.",
+      "source_types": [
+        "map_switch_source",
+        "map_set_view"
+      ]
+    },
+    {
+      "key": "target_region",
+      "description": "Region of interest or target geometry for assessment.",
+      "source_types": [
+        "map_publish_geojson",
+        "model_detect_background",
+        "model_detect_realtime"
+      ]
+    },
+    {
+      "key": "damage_evidence",
+      "description": "Evidence of damaged or affected structures, roads, or terrain.",
+      "source_types": [
+        "model_detect_background",
+        "model_detect_realtime",
+        "data_read"
+      ]
+    },
+    {
+      "key": "damage_extent",
+      "description": "Estimated extent, count, or area of the observed impact.",
+      "source_types": [
+        "model_detect_background",
+        "map_publish_geojson",
+        "assessment_run"
+      ]
+    },
+    {
+      "key": "severity_label",
+      "description": "Final severity judgment produced for the task.",
+      "source_types": [
+        "assessment_run"
+      ]
+    },
+    {
+      "key": "confidence_rationale",
+      "description": "Evidence-grounded explanation for confidence or uncertainty.",
+      "source_types": [
+        "assessment_run"
+      ]
+    },
+    {
+      "key": "uav_reinspection_need",
+      "description": "Justification for whether aerial reinspection is required.",
+      "source_types": [
+        "drone_plan",
+        "assessment_run"
+      ]
+    },
+    {
+      "key": "uav_mission_plan",
+      "description": "Mission outline, route family, or operator-control action for UAV follow-up.",
+      "source_types": [
+        "drone_plan",
+        "drone_execute"
+      ]
+    },
+    {
+      "key": "recommended_action",
+      "description": "Recommended analyst or operational next step.",
+      "source_types": [
+        "assessment_run",
+        "report_generate"
+      ]
+    }
+  ],
+  "registry_policy": {
+    "key_set_locked": true,
+    "backward_compatible_additions_only": true
+  }
+}

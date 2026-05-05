@@ -1,0 +1,9 @@
+{
+  "task_count": 262,
+  "annotation_source": "provided",
+  "annotation_count": 44,
+  "oracle_system_count": 3,
+  "run_roots": [
+    "D:\\codex_work\\agentpaper\\benchmark_release\\runs_formal_updated"
+  ]
+}

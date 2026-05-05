@@ -1,0 +1,556 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/disasteragentbench/task.schema.json",
+  "title": "DisasterAgentBench Task Schema",
+  "description": "Task schema for benchmarking disaster assessment agents over geospatial archives.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "split",
+    "task_family",
+    "user_request",
+    "gold",
+    "evaluation",
+    "metadata"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique benchmark task identifier."
+    },
+    "split": {
+      "type": "string",
+      "enum": [
+        "train",
+        "dev",
+        "test",
+        "hidden_test"
+      ]
+    },
+    "task_family": {
+      "type": "string",
+      "enum": [
+        "event_retrieval",
+        "map_grounding",
+        "damage_localization",
+        "drone_reinspection",
+        "assessment_synthesis",
+        "report_generation"
+      ]
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    "user_request": {
+      "type": "string",
+      "minLength": 1
+    },
+    "allowed_tools": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "data_search",
+          "data_read",
+          "map_switch_source",
+          "map_set_view",
+          "map_publish_geojson",
+          "model_detect_realtime",
+          "model_detect_background",
+          "drone_execute",
+          "assessment_run",
+          "report_generate",
+          "drone_plan"
+        ]
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "tool_budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_steps": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_tool_calls": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_runtime_s": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "candidate_events": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pre_event_asset_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "post_event_asset_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "seed_map_source": {
+          "$ref": "#/$defs/mapSource"
+        },
+        "region_of_interest": {
+          "$ref": "#/$defs/geoRegion"
+        },
+        "simulator_start_state": {
+          "$ref": "#/$defs/droneStartState"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "gold": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "type": "string"
+        },
+        "hazard_type": {
+          "type": "string"
+        },
+        "map_source": {
+          "$ref": "#/$defs/mapSource"
+        },
+        "target_region": {
+          "$ref": "#/$defs/geoRegion"
+        },
+        "target_geojson_path": {
+          "type": "string"
+        },
+        "target_geojson_inline": {
+          "$ref": "#/$defs/featureCollection"
+        },
+        "drone_mission": {
+          "$ref": "#/$defs/droneMission"
+        },
+        "drone_allowed_interrupts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "pause",
+              "resume",
+              "return_home",
+              "stop"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "min_roi_coverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        "impact_summary_facts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_evidence_keys": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": []
+    },
+    "evaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_metric",
+        "metrics"
+      ],
+      "properties": {
+        "primary_metric": {
+          "type": "string",
+          "enum": [
+            "event_accuracy",
+            "topk_recall",
+            "grounding_success",
+            "center_distance_m",
+            "geojson_f1",
+            "geojson_iou",
+            "mission_validity",
+            "roi_coverage",
+            "intervention_success",
+            "severity_f1",
+            "ece",
+            "report_grounding_score",
+            "end_to_end_success"
+          ]
+        },
+        "metrics": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "event_accuracy",
+              "topk_recall",
+              "grounding_success",
+              "layer_selection_accuracy",
+              "center_distance_m",
+              "geojson_precision",
+              "geojson_recall",
+              "geojson_f1",
+              "geojson_iou",
+              "mission_validity",
+              "roi_coverage",
+              "intervention_success",
+              "intervention_rate",
+              "return_home_success",
+              "severity_accuracy",
+              "severity_f1",
+              "ece",
+              "report_grounding_score",
+              "evidence_coverage",
+              "review_rate",
+              "latency_s",
+              "tool_calls",
+              "end_to_end_success"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "grading": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "center_distance_threshold_m": {
+              "type": "number",
+              "minimum": 0
+            },
+            "iou_threshold": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "f1_threshold": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "coverage_threshold": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "path_deviation_threshold_m": {
+              "type": "number",
+              "minimum": 0
+            },
+            "accept_partial_credit": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_name",
+        "hazard_type",
+        "region",
+        "source_bundle"
+      ],
+      "properties": {
+        "event_name": {
+          "type": "string"
+        },
+        "hazard_type": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "time_scope": {
+          "type": "string",
+          "enum": [
+            "single_time",
+            "pre_post",
+            "multi_temporal"
+          ]
+        },
+        "source_bundle": {
+          "type": "string"
+        },
+        "requires_human_review": {
+          "type": "boolean"
+        },
+        "requires_background_execution": {
+          "type": "boolean"
+        },
+        "operator_control_level": {
+          "type": "string",
+          "enum": [
+            "none",
+            "optional",
+            "required"
+          ]
+        },
+        "safety_level": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "annotation_status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "verified",
+            "adjudicated"
+          ]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "mapSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "type": "string"
+        },
+        "map_url": {
+          "type": "string"
+        },
+        "tile_url_template": {
+          "type": "string"
+        },
+        "zoom": {
+          "type": "integer"
+        },
+        "tms": {
+          "type": "boolean"
+        }
+      }
+    },
+    "geoRegion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "bbox": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "south",
+            "west",
+            "north",
+            "east"
+          ],
+          "properties": {
+            "south": {
+              "type": "number"
+            },
+            "west": {
+              "type": "number"
+            },
+            "north": {
+              "type": "number"
+            },
+            "east": {
+              "type": "number"
+            }
+          }
+        },
+        "center": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "lat": {
+              "type": "number"
+            },
+            "lng": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "droneStartState": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "lng": {
+          "type": "number"
+        },
+        "altitude": {
+          "type": "number",
+          "minimum": 0
+        },
+        "heading": {
+          "type": "number"
+        },
+        "speed": {
+          "type": "number",
+          "minimum": 0
+        },
+        "home_lat": {
+          "type": "number"
+        },
+        "home_lng": {
+          "type": "number"
+        }
+      }
+    },
+    "droneWaypoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lat",
+        "lng"
+      ],
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "lng": {
+          "type": "number"
+        },
+        "speed": {
+          "type": "number",
+          "minimum": 0
+        },
+        "altitude": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "droneMission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mission_type"
+      ],
+      "properties": {
+        "mission_type": {
+          "type": "string",
+          "enum": [
+            "custom",
+            "default",
+            "random_walk",
+            "patrol",
+            "lawnmower",
+            "orbit",
+            "route_file"
+          ]
+        },
+        "start_lat": {
+          "type": "number"
+        },
+        "start_lng": {
+          "type": "number"
+        },
+        "takeoff_altitude": {
+          "type": "number",
+          "minimum": 0
+        },
+        "cruise_speed": {
+          "type": "number",
+          "minimum": 0
+        },
+        "orbit_center_lat": {
+          "type": "number"
+        },
+        "orbit_center_lng": {
+          "type": "number"
+        },
+        "orbit_radius_m": {
+          "type": "number",
+          "minimum": 0
+        },
+        "orbit_points": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "orbit_laps": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "route_file": {
+          "type": "string"
+        },
+        "waypoints": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/droneWaypoint"
+          }
+        },
+        "background": {
+          "type": "boolean"
+        }
+      }
+    },
+    "featureCollection": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "type",
+        "features"
+      ],
+      "properties": {
+        "type": {
+          "const": "FeatureCollection"
+        },
+        "features": {
+          "type": "array"
+        }
+      }
+    }
+  }
+}

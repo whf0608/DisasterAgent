@@ -1,0 +1,7 @@
+task_family,annotation_source,task_count,compared_task_count,percent_agreement,cohen_kappa,mean_bbox_iou,mean_evidence_f1,mean_report_slot_f1
+event_retrieval,provided,44,0,0.0,,,,
+map_grounding,provided,44,0,0.0,,,,
+damage_localization,provided,44,0,0.0,,,,
+drone_reinspection,provided,42,0,0.0,,,,
+assessment_synthesis,provided,44,44,0.4318181818181818,0.20977011494252873,,1.0,
+report_generation,provided,44,0,0.0,,,,

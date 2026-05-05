@@ -1,0 +1,59 @@
+{
+  "version": "1.0.0",
+  "status": "frozen",
+  "frozen_at": "2026-04-26",
+  "template_id": "disaster_assessment_report_v1",
+  "required_slots": [
+    {
+      "slot": "event_summary",
+      "required": true,
+      "evidence_keys": [
+        "event_id",
+        "hazard_type",
+        "map_source"
+      ]
+    },
+    {
+      "slot": "impact_summary",
+      "required": true,
+      "evidence_keys": [
+        "target_region",
+        "damage_evidence",
+        "damage_extent"
+      ]
+    },
+    {
+      "slot": "severity_assessment",
+      "required": true,
+      "evidence_keys": [
+        "severity_label",
+        "confidence_rationale"
+      ]
+    },
+    {
+      "slot": "reinspection_decision",
+      "required": false,
+      "evidence_keys": [
+        "uav_reinspection_need",
+        "uav_mission_plan"
+      ]
+    },
+    {
+      "slot": "recommended_action",
+      "required": true,
+      "evidence_keys": [
+        "recommended_action"
+      ]
+    }
+  ],
+  "scoring": {
+    "metric": "report_grounding_score",
+    "minimum_evidence_coverage": 0.8,
+    "minimum_required_slot_coverage": 1.0,
+    "allow_additional_sections": true
+  },
+  "stability_guarantee": {
+    "required_slots_locked": true,
+    "slot_meanings_locked": true
+  }
+}

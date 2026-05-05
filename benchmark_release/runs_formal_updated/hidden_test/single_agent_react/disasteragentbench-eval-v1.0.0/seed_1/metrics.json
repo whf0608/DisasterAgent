@@ -1,0 +1,120 @@
+{
+  "task_count": 262,
+  "successful_tasks": 154,
+  "reviewed_tasks": 0,
+  "task_family_counts": {
+    "assessment_synthesis": 44,
+    "damage_localization": 44,
+    "drone_reinspection": 42,
+    "event_retrieval": 44,
+    "map_grounding": 44,
+    "report_generation": 44
+  },
+  "metric_task_counts": {
+    "center_distance_m": 44,
+    "end_to_end_success": 262,
+    "event_accuracy": 44,
+    "evidence_coverage": 44,
+    "geojson_f1": 44,
+    "geojson_iou": 44,
+    "geojson_precision": 44,
+    "geojson_recall": 44,
+    "grounding_success": 44,
+    "intervention_rate": 42,
+    "intervention_success": 42,
+    "latency_s": 262,
+    "layer_selection_accuracy": 44,
+    "mission_validity": 42,
+    "report_grounding_score": 44,
+    "review_rate": 262,
+    "roi_coverage": 86,
+    "severity_accuracy": 44,
+    "tool_calls": 262,
+    "topk_recall": 44
+  },
+  "failure_tag_distribution": {
+    "infra_failure": 42,
+    "success": 220
+  },
+  "event_accuracy": 1.0,
+  "topk_recall": 1.0,
+  "latency_s": 0.10587480916030544,
+  "tool_calls": 5.511450381679389,
+  "review_rate": 0.0,
+  "end_to_end_success": 0.5877862595419847,
+  "grounding_success": 1.0,
+  "center_distance_m": 0.0,
+  "layer_selection_accuracy": 1.0,
+  "geojson_precision": 1.0,
+  "geojson_recall": 1.0,
+  "geojson_f1": 1.0,
+  "geojson_iou": 1.0,
+  "roi_coverage": 1.0,
+  "mission_validity": 0.0,
+  "intervention_success": 1.0,
+  "intervention_rate": 0.0,
+  "severity_accuracy": 0.5,
+  "evidence_coverage": 0.555555555555556,
+  "report_grounding_score": 0.277777777777778,
+  "family_primary_metrics": {
+    "assessment_synthesis": {
+      "primary_metric": "severity_f1",
+      "mean": 0.5,
+      "pass_rate": 0.5,
+      "task_count": 44
+    },
+    "damage_localization": {
+      "primary_metric": "geojson_f1",
+      "mean": 1.0,
+      "pass_rate": 1.0,
+      "task_count": 44
+    },
+    "drone_reinspection": {
+      "primary_metric": "mission_validity",
+      "mean": 0.0,
+      "pass_rate": 0.0,
+      "task_count": 42
+    },
+    "event_retrieval": {
+      "primary_metric": "event_accuracy",
+      "mean": 1.0,
+      "pass_rate": 1.0,
+      "task_count": 44
+    },
+    "map_grounding": {
+      "primary_metric": "grounding_success",
+      "mean": 1.0,
+      "pass_rate": 1.0,
+      "task_count": 44
+    },
+    "report_generation": {
+      "primary_metric": "report_grounding_score",
+      "mean": 0.277777777777778,
+      "pass_rate": 0.0,
+      "task_count": 44
+    }
+  },
+  "severity_f1_macro": 0.18906249999999997,
+  "severity_f1_weighted": 0.38394886363636355,
+  "severity_f1": 0.18906249999999997,
+  "ece": 0.10233391513397419,
+  "result_tier": "formal",
+  "formal_readiness_ok": true,
+  "formal_global_blockers": [],
+  "system": "single_agent_react",
+  "subset": "hidden_test",
+  "seed": 1,
+  "config_id": "disasteragentbench-eval-v1.0.0",
+  "formal_blocker_categories": [],
+  "taskset_id": "taskset_2a27e7489cc3",
+  "taskset_label": "updated_tasks_with_bbox.hidden_test_manifest",
+  "taskset_task_count": 262,
+  "task_family_scope": [
+    "assessment_synthesis",
+    "damage_localization",
+    "drone_reinspection",
+    "event_retrieval",
+    "map_grounding",
+    "report_generation"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "run_roots": [
+    "D:\\codex_work\\agentpaper\\benchmark_release\\runs_supplementary_20260503"
+  ],
+  "metric_file_count": 12,
+  "group_count": 4,
+  "pairwise_test_count": 6,
+  "groups": [
+    {
+      "subset": "hidden_test",
+      "system": "oracle_all_gold",
+      "config_id": "disasteragentbench-eval-v1.0.0",
+      "taskset_id": "taskset_2a27e7489cc3",
+      "taskset_label": "updated_tasks_with_bbox.hidden_test_manifest",
+      "seed_count": 3
+    },
+    {
+      "subset": "hidden_test",
+      "system": "oracle_retrieval_single_agent",
+      "config_id": "disasteragentbench-eval-v1.0.0",
+      "taskset_id": "taskset_2a27e7489cc3",
+      "taskset_label": "updated_tasks_with_bbox.hidden_test_manifest",
+      "seed_count": 3
+    },
+    {
+      "subset": "hidden_test",
+      "system": "single_agent_react",
+      "config_id": "disasteragentbench-eval-v1.0.0",
+      "taskset_id": "taskset_2a27e7489cc3",
+      "taskset_label": "updated_tasks_with_bbox.hidden_test_manifest",
+      "seed_count": 3
+    },
+    {
+      "subset": "hidden_test",
+      "system": "wo_drone_and_review",
+      "config_id": "disasteragentbench-eval-v1.0.0",
+      "taskset_id": "taskset_2a27e7489cc3",
+      "taskset_label": "updated_tasks_with_bbox.hidden_test_manifest",
+      "seed_count": 3
+    }
+  ]
+}

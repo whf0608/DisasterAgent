@@ -1,0 +1,55 @@
+{
+  "package_id": "disasteragentbench-freeze-v1.0.0",
+  "version": "1.0.0",
+  "status": "frozen",
+  "frozen_at": "2026-04-26",
+  "description": "Frozen benchmark package for global severity policy, impact-fact schema, evidence-key vocabulary, and report slot/scoring contract.",
+  "package_scope": {
+    "core_policy_files": "frozen",
+    "task_level_gold_overrides": "optional_until_adjudicated_but_required_for_formal_assessment_and_report_hidden_test_runs"
+  },
+  "files": [
+    {
+      "path": "severity_label_glossary.json",
+      "role": "severity label glossary",
+      "required": true
+    },
+    {
+      "path": "impact_fact_template.json",
+      "role": "impact fact format",
+      "required": true
+    },
+    {
+      "path": "evidence_key_registry.json",
+      "role": "controlled evidence vocabulary",
+      "required": true
+    },
+    {
+      "path": "report_template.json",
+      "role": "report slot and scoring template",
+      "required": true
+    },
+    {
+      "path": "assessment_gold_overrides.jsonl",
+      "role": "task-level adjudicated gold overrides for assessment_synthesis tasks",
+      "required": false,
+      "required_for": "formal hidden-test assessment runs"
+    },
+    {
+      "path": "report_gold_overrides.jsonl",
+      "role": "task-level adjudicated gold overrides for report_generation tasks",
+      "required": false,
+      "required_for": "formal hidden-test report runs"
+    }
+  ],
+  "freeze_requirements": [
+    "Do not change severity label ordinals after release.",
+    "Keep evidence keys stable for all hidden-test runs.",
+    "Do not change report slot semantics after public development tuning.",
+    "Record the freeze package version in each evaluation run."
+  ],
+  "notes": [
+    "This package is frozen at the core-policy level.",
+    "Assessment/report formal hidden-test evaluation still requires adjudicated override rows in the override files."
+  ]
+}
