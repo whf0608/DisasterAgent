@@ -26,9 +26,9 @@
     "blocker_counts": {},
     "blocker_category_counts": {},
     "expected_subset": "hidden_test",
-    "hidden_test_manifest_path": "D:\\codex_work\\agentpaper\\benchmark_release\\hidden_test_package_manifest.json",
-    "split_manifest_path": "D:\\codex_work\\agentpaper\\disasteragentbench_preliminary_split.csv",
-    "artifact_dir": "D:\\codex_work\\agentpaper\\benchmark_release\\runs_formal_updated\\hidden_test\\oracle_retrieval_single_agent\\disasteragentbench-eval-v1.0.0\\seed_0"
+    "hidden_test_manifest_path": "./benchmark_release\\hidden_test_package_manifest.json",
+    "split_manifest_path": "./disasteragentbench_preliminary_split.csv",
+    "artifact_dir": "./benchmark_release\\runs_formal_updated\\hidden_test\\oracle_retrieval_single_agent\\disasteragentbench-eval-v1.0.0\\seed_0"
   },
   "tasks": [
     {

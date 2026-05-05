@@ -1,8 +1,8 @@
 {
   "run_roots": [
-    "D:\\codex_work\\agentpaper\\benchmark_release\\runs_transfer_heldout_20260504_separate\\hazard_heldout",
-    "D:\\codex_work\\agentpaper\\benchmark_release\\runs_transfer_heldout_20260504_separate\\region_heldout",
-    "D:\\codex_work\\agentpaper\\benchmark_release\\runs_transfer_heldout_20260504_separate\\time_heldout"
+    "./benchmark_release\\runs_transfer_heldout_20260504_separate\\hazard_heldout",
+    "./benchmark_release\\runs_transfer_heldout_20260504_separate\\region_heldout",
+    "./benchmark_release\\runs_transfer_heldout_20260504_separate\\time_heldout"
   ],
   "metric_file_count": 18,
   "group_count": 6,

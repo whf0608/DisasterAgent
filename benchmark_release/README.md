@@ -1,41 +1,41 @@
 # Benchmark Release
 
-This directory now contains both:
+This directory contains the public DisasterAgentBench release files:
 
-- active release files
-- remaining templates or draft assets
+- frozen evaluation configuration
+- gold-removed hidden-test tasks
+- hidden-test package manifest
+- formal, supplementary, held-out, and validation run outputs
 
-## Active release file
+Hidden-test gold labels are not included in this public directory. Maintainer-side
+gold files used for strict scoring are withheld from the public artifact.
+
+## Active release files
 
 - `evaluation_config.json`
-  - current non-template benchmark evaluation config
-  - frozen at the release-config level
-  - intended to be used by the `evaluation/` layer
+  - frozen benchmark evaluation configuration
+- `hidden_test_package_manifest.json`
+  - manifest for the released hidden-test package
+- `hidden_test_tasks.jsonl`
+  - 262 hidden-test task records with top-level `gold` fields removed
+- `runs_formal_updated/`
+  - main hidden-test runs and aggregate tables
+- `runs_supplementary_20260503/`
+  - supplementary review, oracle, and ablation runs
+- `runs_transfer_heldout_20260504_separate/`
+  - hazard-held-out, region-held-out, and time-held-out transfer runs
+- `validation_supplementary_20260503/`
+  - human-reference, agreement, oracle-validity, and validation summaries
 
-## Remaining template or draft assets
+## Non-release helpers
+
+Some template and provenance files may be present for auditability, but they are
+not required for scoring or reproducing reported tables:
 
 - `evaluation_config.template.json`
-  - retained as a scaffolding reference
 - `task_record.template.json`
-  - schema-conformant task-record template
 - `hidden_test_package_manifest.template.json`
-  - hidden-test package scaffold; still not a finalized package
 - `assessment_report_candidate_units.csv`
-  - candidate pool only, not final formal hidden-test task gold
-
-## Current status
-
-What is finalized here:
-
-- the main evaluation config file
-- lock fields for prompts, routing, and thresholds
-- baseline metric thresholds and required run artifacts
-
-What is not fully finalized yet:
-
-- hidden-test package final freeze state
-- task-level adjudicated assessment/report gold
-- final hidden-test task package distribution
 
 ## Practical usage
 
@@ -43,17 +43,15 @@ Use:
 
 - `evaluation_config.json`
 - `hidden_test_package_manifest.json`
+- `hidden_test_tasks.jsonl`
+- `runs_*`
 
-Do not use for real runs unless you explicitly want scaffolding:
+Do not treat template files as the frozen scorer boundary.
 
-- `evaluation_config.template.json`
-- `hidden_test_package_manifest.template.json`
+## Release boundary
 
-## Recommended next steps
-
-1. finalize the hidden-test package manifest as a non-template file
-2. promote the hidden-test package from `preformal` to `frozen`
-3. populate adjudicated assessment/report override files under `benchmark_freeze/`
-4. regenerate hidden-test task records in `formal-mode`
-5. run `formal_readiness`
-6. run `run_eval --strict-formal`
+The public hidden-test task file is gold-removed. Private tile-server URLs and
+local filesystem paths are not part of the public release boundary. When a task
+record refers to a map source, the released artifact should be read as exposing
+the map-source identifier and task metadata, not as redistributing the underlying
+imagery or map tiles.

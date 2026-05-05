@@ -2,7 +2,7 @@
   "subset": "hazard_heldout",
   "split": "hidden_test",
   "split_version": "supplementary_20260504",
-  "source_tasks": "D:\\codex_work\\agentpaper\\benchmark_release\\updated_tasks_with_bbox2.jsonl",
+  "source_tasks": "./benchmark_release\\updated_tasks_with_bbox2.jsonl",
   "task_count": 29,
   "event_count": 5,
   "task_ids": [

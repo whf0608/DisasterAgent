@@ -25,13 +25,13 @@
     "metrics.json",
     "failures.csv"
   ],
-  "source_task_file": "D:\\mapagent\\outputs\\task_generation_v5\\task_records_hidden_test.jsonl",
+  "source_task_file": "withheld_internal_generation_source",
   "generated_at": "2026-04-26 23:17:22",
   "notes": [
     "Do not distribute hidden-test gold labels with this package.",
     "Use the same scoring thresholds as the active evaluation configuration.",
-    "Status `frozen` means the distributed hidden-test package remains gold-removed while the paired internal formal task file and adjudicated override files are available for strict evaluation."
+    "Status `frozen` means the distributed hidden-test package remains gold-removed while maintainer-side gold is withheld for scorer-side evaluation."
   ],
-  "formal_internal_task_file": "internal_hidden_test_tasks.formal.jsonl",
-  "formal_gold_source": "../benchmark_freeze/assessment_gold_overrides.jsonl; ../benchmark_freeze/report_gold_overrides.jsonl; internal_hidden_test_tasks.formal.jsonl"
+  "public_gold_policy": "Hidden-test gold labels are not distributed in the public artifact.",
+  "maintainer_gold_policy": "Gold labels used for strict hidden-test scoring are retained outside the public repository."
 }

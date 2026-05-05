@@ -1,0 +1,54 @@
+{
+  "@context": "https://w3id.org/croissant/context",
+  "@type": "Dataset",
+  "name": "DisasterAgentBench",
+  "description": "A benchmark for retrieval-grounded disaster assessment with drone-in-the-loop reinspection.",
+  "url": "https://github.com/whf0608/DisasterAgent",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "keywords": [
+    "benchmark",
+    "disaster assessment",
+    "geospatial reasoning",
+    "drone reinspection",
+    "agent evaluation"
+  ],
+  "distribution": [
+    {
+      "@type": "FileObject",
+      "name": "benchmark_release/hidden_test_tasks.jsonl",
+      "contentUrl": "./benchmark_release/hidden_test_tasks.jsonl",
+      "encodingFormat": "application/jsonl"
+    },
+    {
+      "@type": "FileObject",
+      "name": "benchmark_release/hidden_test_package_manifest.json",
+      "contentUrl": "./benchmark_release/hidden_test_package_manifest.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "FileObject",
+      "name": "benchmark_release/evaluation_config.json",
+      "contentUrl": "./benchmark_release/evaluation_config.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "FileObject",
+      "name": "benchmark_freeze/freeze_package_manifest.json",
+      "contentUrl": "./benchmark_freeze/freeze_package_manifest.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "FileObject",
+      "name": "README.md",
+      "contentUrl": "./README.md",
+      "encodingFormat": "text/markdown"
+    }
+  ],
+  "recordSets": [
+    {
+      "@type": "RecordSet",
+      "name": "run_artifacts",
+      "description": "Released run directories containing config, predictions, trace, metrics, and failures files."
+    }
+  ]
+}

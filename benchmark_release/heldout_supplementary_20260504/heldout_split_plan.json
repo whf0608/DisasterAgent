@@ -1,16 +1,16 @@
 {
   "split_version": "supplementary_20260504",
-  "source_tasks": "D:\\codex_work\\agentpaper\\benchmark_release\\updated_tasks_with_bbox2.jsonl",
-  "output_tasks": "D:\\codex_work\\agentpaper\\benchmark_release\\heldout_supplementary_20260504\\updated_tasks_with_bbox2_heldout.jsonl",
+  "source_tasks": "./benchmark_release\\updated_tasks_with_bbox2.jsonl",
+  "output_tasks": "./benchmark_release\\heldout_supplementary_20260504\\updated_tasks_with_bbox2_heldout.jsonl",
   "rules": {
     "hazard_heldout": "metadata.hazard_type == 'Earthquake'",
     "region_heldout": "event_id in curated Asia-Pacific event list",
     "time_heldout": "event year >= 2023 extracted from event name/id"
   },
   "manifest_paths": {
-    "hazard_heldout": "D:\\codex_work\\agentpaper\\benchmark_release\\heldout_supplementary_20260504\\hazard_heldout_manifest.json",
-    "region_heldout": "D:\\codex_work\\agentpaper\\benchmark_release\\heldout_supplementary_20260504\\region_heldout_manifest.json",
-    "time_heldout": "D:\\codex_work\\agentpaper\\benchmark_release\\heldout_supplementary_20260504\\time_heldout_manifest.json"
+    "hazard_heldout": "./benchmark_release\\heldout_supplementary_20260504\\hazard_heldout_manifest.json",
+    "region_heldout": "./benchmark_release\\heldout_supplementary_20260504\\region_heldout_manifest.json",
+    "time_heldout": "./benchmark_release\\heldout_supplementary_20260504\\time_heldout_manifest.json"
   },
   "summary": {
     "hazard_heldout": {

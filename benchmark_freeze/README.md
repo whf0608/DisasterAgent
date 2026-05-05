@@ -18,13 +18,15 @@ What is frozen here:
 - `evidence_key_registry.json`: controlled evidence vocabulary
 - `report_template.json`: required report slots and scorer-side grounding contract
 
-Task-level adjudicated gold still lives in:
+Task-level policy overrides live in:
 
 - `assessment_gold_overrides.jsonl`
 - `report_gold_overrides.jsonl`
 
-These override files are part of the freeze-directory contract, but they may
-remain empty until benchmark owners finish task-level adjudication.
+These override files are part of the freeze-directory contract. Public release
+files expose the policy boundary and gold-removed hidden-test tasks; maintainer-
+side hidden-test gold used for strict scoring is withheld from the public
+repository.
 
 Template helpers for writing those files:
 
@@ -35,13 +37,12 @@ Template helpers for writing those files:
 Practical interpretation:
 
 - the core freeze package itself is frozen
-- formal hidden-test `assessment_synthesis` and `report_generation` results
-  still require adjudicated override rows
+- public files define the released scorer policy and task schema
+- hidden-test gold labels are not distributed
 
 Recommended workflow:
 
 1. Freeze the split manifest and benchmark release config.
 2. Maintain the core files in this directory as backward-compatible frozen assets.
-3. Populate `assessment_gold_overrides.jsonl` and `report_gold_overrides.jsonl`
-   with adjudicated task-level gold rows.
-4. Run `formal_readiness` and `--strict-formal` before claiming formal results.
+3. Use the public gold-removed hidden-test task file for released inputs.
+4. Use maintainer-side gold outside the public repository for strict scoring.

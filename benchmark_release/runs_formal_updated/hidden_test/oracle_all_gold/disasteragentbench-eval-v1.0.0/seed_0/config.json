@@ -66,7 +66,7 @@
       "Formal hidden-test evaluation uses internal_hidden_test_tasks.formal.jsonl with paired adjudicated override files; the distributed hidden-test file remains gold-removed."
     ]
   },
-  "tasks_path": "D:\\codex_work\\agentpaper\\benchmark_release\\updated_tasks_with_bbox.jsonl",
+  "tasks_path": "./benchmark_release\\updated_tasks_with_bbox.jsonl",
   "subset": "hidden_test",
   "seed": 0,
   "system": "oracle_all_gold",

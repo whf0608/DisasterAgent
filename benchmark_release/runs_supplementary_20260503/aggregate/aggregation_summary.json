@@ -1,6 +1,6 @@
 {
   "run_roots": [
-    "D:\\codex_work\\agentpaper\\benchmark_release\\runs_supplementary_20260503"
+    "./benchmark_release\\runs_supplementary_20260503"
   ],
   "metric_file_count": 12,
   "group_count": 4,
