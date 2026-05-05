@@ -2,11 +2,11 @@
 
 ## Overview
 
-This repository contains the paper source, benchmark files, frozen evaluation policy files, and experimental run outputs for **DisasterAgentBench**, an evaluation benchmark for retrieval-grounded disaster assessment with drone-in-the-loop reinspection.
+This repository contains benchmark files, frozen evaluation policy files, and experimental run outputs for **DisasterAgentBench**, an evaluation benchmark for retrieval-grounded disaster assessment with drone-in-the-loop reinspection.
 
 The repository is organized to support:
 
-- inspection of the paper and benchmark specification
+- inspection of the benchmark specification
 - access to the released hidden-test package and evaluation configuration
 - audit of formal, supplementary, and held-out experimental runs
 - reproduction of the file contract described in the paper's `Required run artifacts`
@@ -15,8 +15,6 @@ The repository is organized to support:
 
 The benchmark definition and released data are centered on the following files and directories:
 
-- `Formatting_Instructions_For_NeurIPS_2026/`
-  - current NeurIPS paper source and compiled PDF
 - `disasteragentbench_preliminary_split.csv`
   - split manifest over train, development, and hidden-test units
 - `disasteragentbench_task_schema.json`
@@ -65,13 +63,12 @@ Many runs also include derived files such as:
 
 To reproduce the released evaluation setup:
 
-1. Read the paper source in `Formatting_Instructions_For_NeurIPS_2026/main.tex`.
-2. Use `benchmark_release/evaluation_config.json` as the frozen evaluation configuration.
-3. Use `benchmark_release/hidden_test_package_manifest.json` together with `benchmark_release/hidden_test_tasks.jsonl` for the released hidden-test package.
-4. Use `benchmark_freeze/` for frozen benchmark policy files and adjudicated override files.
-5. Follow the run-directory contract under `benchmark_release/runs_*` when generating new runs.
+1. Use `benchmark_release/evaluation_config.json` as the frozen evaluation configuration.
+2. Use `benchmark_release/hidden_test_package_manifest.json` together with `benchmark_release/hidden_test_tasks.jsonl` for the released hidden-test package.
+3. Use `benchmark_freeze/` for frozen benchmark policy files and adjudicated override files.
+4. Follow the run-directory contract under `benchmark_release/runs_*` when generating new runs.
 
-For paper-aligned evaluation, the most important directories are:
+For released evaluation results, the most important directories are:
 
 - `benchmark_release/runs_formal_updated/`
 - `benchmark_release/runs_supplementary_20260503/`
